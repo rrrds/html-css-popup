@@ -1,0 +1,68 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+[aria-hidden="true"] {
+  display: none;
+}
+
+.menu {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu__item {
+  padding: 0 10px;
+  line-height: 10px;
+}
+
+.button-text {
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.button-icon {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  font-weight: 400;
+    font-size: 12px;
+  border-radius: 50%;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+
+  &.button-icon_large {
+    height: 32px;
+    width: 32px;
+    line-height: 33px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  &.button-icon_blue {
+    background-color: #0288d1;
+  }
+
+  &.button-icon_squares {
+    border-radius: 0;
+    background-image: linear-gradient(to bottom, transparent 50%, #fff 50%),
+      linear-gradient(to right, transparent 50%, #fff 50%);
+    background-size: 8px 8px, 8px 8px;
+  }
+
+  &.button-icon_with-text {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+@import "more-button.scss";

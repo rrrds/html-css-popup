@@ -1,0 +1,70 @@
+{% set mainIcons = [
+  'Photos',
+  'Maps',
+  'Play',
+  'YouTube',
+  'Gmail',
+  'Translate',
+  'Calendar',
+  'Google+',
+  'Search',
+  'Drive'
+] %}
+
+{% set secondaryIcons = [
+  'Blogger',
+  'My Business',
+  'Docs',
+  'Account',
+  'Contacts',
+  'Hangouts',
+  'Keep',
+  'Jamboard',
+  'Classroom',
+  'Earth',
+  'Collections'
+] %}
+
+<div class="toggler">
+  <input
+    type="checkbox"
+    id="more-check"
+    class="toggler__checkbox"
+    aria-hidden="true"
+  />
+  <label for="more-check" class="toggler__label button-icon button-icon_squares" tabindex="0"></label>
+  <div class="toggler__arrow"></div>
+  <!-- <div class="toggler__arrow"></div> -->
+
+  <div class="toggler__content toggler__content_popup">
+    <ul class="icons-list">
+      {% for icon in mainIcons %}
+        <li class="icons-list__icon"><a href="#" class="icon">
+          <span class="icon__image"></span>
+          <span class="icon__text">{{ icon }}</span>
+        </a></li>
+      {% endfor %}
+    </ul>
+
+    <div class="toggler toggler_reordered">
+      <input
+        type="checkbox"
+        id="more-check2"
+        class="toggler__checkbox"
+        aria-hidden="true"
+      />
+      <label for="more-check2" class="toggler__label toggler__label_button">More</label>
+      <div class="toggler__content toggler__content_first">
+        <span class="rule"></span>
+        <ul class="icons-list">
+            {% for icon in secondaryIcons %}
+            <li class="icons-list__icon"><a href="#" class="icon">
+                <span class="icon__image"></span>
+                <span class="icon__text">{{ icon }}</span>
+              </a></li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
