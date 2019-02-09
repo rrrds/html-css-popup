@@ -3,10 +3,6 @@ html {
     font-size: 13px;
 }
 
-[aria-hidden="true"] {
-  display: none;
-}
-
 .menu {
   margin-top: 15px;
   width: 100%;
@@ -17,7 +13,7 @@ html {
 
 .menu__item {
   padding: 0 10px;
-  line-height: 10px;
+  line-height: 1.0;
 }
 
 .button-text {
@@ -33,16 +29,20 @@ html {
   display: inline-block;
   height: 20px;
   width: 20px;
-  line-height: 20px;
+  line-height: (20 / 12);
   font-weight: 400;
-    font-size: 12px;
+  font-size: 12px;
   border-radius: 50%;
   background-color: rgba($color: #000000, $alpha: 0.5);
+
+  &:hover {
+    background-color: rgba($color: #000000, $alpha: 0.7);
+  }
 
   &.button-icon_large {
     height: 32px;
     width: 32px;
-    line-height: 33px;
+    line-height: (32/16);
     font-weight: 600;
     font-size: 16px;
   }
@@ -65,4 +65,4 @@ html {
   }
 }
 
-@import "more-button.scss";
+@import 'more-button';

@@ -1,3 +1,4 @@
+const prettier = require('gulp-prettier');
 const nunjucksRender = require("gulp-nunjucks-render");
 const sass = require("gulp-sass");
 const del = require("del");
@@ -40,7 +41,7 @@ const build = function(cb) {
 };
 
 const cleanTask = function(cb) {
-  del([config.dest.root]);
+  del([config.dest.root + '/*']);
 };
 
 const buildDevTask = function(cb) {
@@ -80,12 +81,13 @@ const nunjucksWatchTask = function() {
 const nunjucksTask = function(cb) {
   nunjucksRender.nunjucks.configure({
     watch: false,
-    trimBlocks: true,
-    lstripBlocks: true
+    // trimBlocks: true,
+    // lstripBlocks: true
   });
 
   return src(config.src.root + "/**/*.html")
     .pipe(nunjucksRender({ path: "src" }))
+    .pipe(prettier({ singleQuote: true }))
     .pipe(dest(config.dest.root));
 };
 
